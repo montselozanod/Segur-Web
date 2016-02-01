@@ -9,18 +9,15 @@
 }
 
 .social_buttons{
-  position: absolute;
-  z-index: 100;
-  bottom: 50px;
-  left: 50%;
-  margin-left: -294px;
-}
-
-.text-center {
-  text-align: center
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 500px;
 }
 
 .logo-img{
+  padding-top: 100px;
   width: 50%;
   display: block;
   margin-left: auto;

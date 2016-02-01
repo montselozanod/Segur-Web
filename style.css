@@ -32,7 +32,7 @@
   height: auto;
 }
 
-.icon img:hover{
+.icon p:hover{
   width: 60px;
   height: auto;
 }

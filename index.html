@@ -3,44 +3,24 @@
     <title>Seguribas</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="http://code.jquery.com/jquery.min.js"></script>
-    <script src="/js/vegas/vegas.min.js"></script>
-    <link rel="stylesheet" href="/js/vegas/vegas.min.css">
-
+    <script src="js/vegas/vegas.min.js"></script>
+    <link rel="stylesheet" href="js/vegas/vegas.min.css">
     <script type="text/javascript">
-    $(document).ready(function(){
-
-        var imgArr = new Array( // relative paths of images
-        'images/1.jpg',
-        'images/28.jpg',
-        'images/32.jpg',
-        'images/33.jpg',
-        'images/48.jpg'
-        );
-
-        var preloadArr = new Array();
-        var i;
-
-        /* preload images */
-        for(i=0; i < imgArr.length; i++){
-        preloadArr[i] = new Image();
-        preloadArr[i].src = imgArr[i];
-        }
-
-        var currImg = 1;
-        var intID = setInterval(changeImg, 6000);
-
-        /* image rotator */
-        function changeImg(){
-        $('#masthead').animate({opacity: 0}, 1000, function(){
-        $(this).css('background','url(' + preloadArr[currImg++%preloadArr.length].src +') top center no-repeat');
-        }).animate({opacity: 1}, 1000);
-        }
-
+      $(function(){
+        $('body').vegas({
+          slides:[
+            {src:'images/1.jpg'},
+            {src:'images/28.jpg'},
+            {src:'images/32.jpg'},
+            {src:'images/33.jpg'},
+            {src:'images/48.jpg'},
+          ],
+          overlay: 'js/vegas/overlays/02.png'
         });
+      });
     </script>
   </head>
   <body>
-    <div  class="full-screen"></div>
     <div class="social_buttons">
       <a class="icon" href="https://www.facebook.com/Seguribas/"><img class="icon" src="images/tenis.png"></a>
       <a class="icon" href="https://www.facebook.com/Seguribas/"><img class="icon" src="images/telefono.png"></a>

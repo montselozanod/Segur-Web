@@ -2,35 +2,48 @@
   <head>
     <title>Seguribas</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script type="text/javascript">
-        $(function() {
-        $('.fadein img:gt(0)').hide();
+    $(document).ready(function(){
 
-        setInterval(function () {
-            $('.fadein :first-child').fadeOut()
-                                     .next('img')
-                                     .fadeIn()
-                                     .end()
-                                     .appendTo('.fadein');
-        }, 4000); // 4 seconds
+        var imgArr = new Array( // relative paths of images
+        'images/1.jpg',
+        'images/28.jpg',
+        'images/32.jpg',
+        'images/33.jpg',
+        'images/48.jpg'
+        );
+
+        var preloadArr = new Array();
+        var i;
+
+        /* preload images */
+        for(i=0; i < imgArr.length; i++){
+        preloadArr[i] = new Image();
+        preloadArr[i].src = imgArr[i];
+        }
+
+        var currImg = 1;
+        var intID = setInterval(changeImg, 6000);
+
+        /* image rotator */
+        function changeImg(){
+        $('#masthead').animate({opacity: 0}, 1000, function(){
+        $(this).css('background','url(' + preloadArr[currImg++%preloadArr.length].src +') top center no-repeat');
+        }).animate({opacity: 1}, 1000);
+        }
+
         });
-      </script>
+    </script>
   </head>
   <body>
-    <div class="slider">
-        <img src="images/1.jpg" alt="First Image">
-        <img src="images/28.jpg" alt="Second Image">
-        <img src="images/32.jpg" alt="Third Image">
-        <img src="images/33.jpg" alt="Fourth Image">
-        <img src="images/48.jpg" alt="Fifth Image">
-    </div>
+    <div class="full-screen"></div>
     <div class="social_buttons">
-      <a href="https://www.facebook.com/Seguribas/"><img src="images/tenis.png"></a>
-      <a href="https://www.facebook.com/Seguribas/"><img src="images/telefono.png"></a>
-      <a href="https://www.facebook.com/Seguribas/"><img src="images/mail.png"></a>
-      <a href="https://www.facebook.com/Seguribas/"><img src="images/facebook.png"></a>
-      <a href="https://www.instagram.com/seguribas/"><img src="images/instagram.png"></a>
+      <a class="icon" href="https://www.facebook.com/Seguribas/"><img class="icon" src="images/tenis.png"></a>
+      <a class="icon" href="https://www.facebook.com/Seguribas/"><img class="icon" src="images/telefono.png"></a>
+      <a class="icon" href="https://www.facebook.com/Seguribas/"><img class="icon" src="images/mail.png"></a>
+      <a class="icon" href="https://www.facebook.com/Seguribas/"><img class="icon" src="images/facebook.png"></a>
+      <a class="icon" href="https://www.instagram.com/seguribas/"><img class="icon" src="images/instagram.png"></a>
     </div>
   </body>
 </html>

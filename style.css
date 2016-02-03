@@ -5,7 +5,7 @@
   background-position: center;
   background-repeat: no-repeat;
   width:100%;
- height: 300px;
+  height: 300px;
 }
 
 .social_buttons{
@@ -13,7 +13,7 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 500px;
+  padding-left: 35%;
 }
 
 .logo-img{
@@ -25,7 +25,7 @@
 }
 
 .icon{
-  width: 50px;
+  width: 9%;
   height: auto;
 }
 

@@ -28,6 +28,11 @@
   height: auto;
 }
 
+.phoneContact{
+  width: 20%;
+  margin-left: 40%;
+}
+
 .modalDialog {
 	position: fixed;
 	font-family: Arial, Helvetica, sans-serif;
